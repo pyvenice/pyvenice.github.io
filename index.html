@@ -41,6 +41,10 @@ permalink: /
                     <li><a class="fa fa-2x fa-telegram" href="https://t.me/{{ site.telegram_username }}"><span class="description">Telegram</span></a></li>
                     {% endif %}
 
+                    {% if site.sessionize_page %}
+                    <li><a class="fa fa-2x fa-volume-up" href="https://sessionize.com/{{ site.sessionize_page }}"><span class="description">Sessionize</span></a></li>
+                    {% endif %}
+
                     {% if site.github_username %}
                     <li><a class="fa fa-2x fa-github" href="https://github.com/{{ site.github_username }}"><span class="description">GitHub</span></a></li>
                     {% endif %}
