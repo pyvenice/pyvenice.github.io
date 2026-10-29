@@ -47,6 +47,12 @@ ul {
     list-style: none;
     padding: 0;
 }
+ul:has(+ ul) {
+    margin-bottom: 0;
+}
+ul + ul {
+    margin-top: 0;
+}
 li {
     border-radius: 100%;
     border: 2px solid white;
@@ -73,6 +79,44 @@ a {
 }
 .description {
     display: none;
+}
+.content a.home,
+.page-content a {
+    padding: 0;
+    border: none;
+    width: auto;
+}
+.page-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+    color: white;
+    line-height: 1.6;
+}
+.page-content h2 {
+    color: white;
+}
+.page-content a {
+    color: white;
+    text-decoration: underline;
+}
+body:not(.it) .lang-it,
+body.it .lang-en {
+    display: none;
+}
+.content a.lang-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    line-height: 45px;
+    border: 2px solid white;
+    border-radius: 100%;
+    font-weight: bold;
+    text-align: center;
 }
 
 @media (max-width: 450px) {

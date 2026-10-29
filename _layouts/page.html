@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+{% include head.html %}
+    </head>
+    <body>
+        <div class="content">
+            {% if site.front_img %}
+            <img src="{{ site.front_img_path }}" id="fullscreen">
+            {% endif %}
+
+            {% if page.title_it %}
+            <a class="lang-switch lang-en" href="#it" title="Italiano">IT</a>
+            <a class="lang-switch lang-it" href="#en" title="English">EN</a>
+            {% endif %}
+
+            <a class="home" href="{{ site.baseurl }}/">
+                {% if site.avatar %}
+                    <img src="{{ site.avatar_img_path }}" id="avatar">
+                {% endif %}
+
+                <h1>{{ site.name }}</h1>
+            </a>
+            {% if page.title_it %}
+            <h3><span class="lang-en">{{ page.title }}</span><span class="lang-it">{{ page.title_it }}</span></h3>
+            {% else %}
+            <h3>{{ page.title }}</h3>
+            {% endif %}
+
+            <div class="page-content">
+                {{ content }}
+            </div>
+        </div>
+<!-- Language from URL hash: #it for Italian, English otherwise -->
+<script>
+    function setLang() {
+        var lang = window.location.hash === '#it' ? 'it' : 'en';
+        document.documentElement.lang = lang;
+        document.body.className = lang;
+    }
+    window.addEventListener('hashchange', setLang);
+    setLang();
+</script>
+    </body>
+</html>

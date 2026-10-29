@@ -14,6 +14,7 @@ linkedin_username: pyvenice
 instagram_username:  pyvenice
 youtube_channel: PyVenice
 sessionize_page: pyvenice
+about_url: /about-us/
 
 avatar: yes
 #avatar_img_path: "imgs/avatar.png"
@@ -23,12 +24,12 @@ avatar_img_path: "https://avatars.githubusercontent.com/u/221595140"
 
 
 front_img: no
-front_img_path: "imgs/background.jpg"
+front_img_path: "/imgs/background.jpg"
 #front_img_path: "https://external.url/image.jpg"
 
 
 favicon_img: yes
-favicon_img_path: "imgs/favicon.ico"
+favicon_img_path: "/imgs/favicon.ico"
 #favicon_img_path: "https://external.url/favicon.ico"
 
 

@@ -4,20 +4,7 @@ permalink: /
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="{{ site.description }}">
-        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-        {% if site.favicon_img %}
-        <link rel="shortcut icon" href="{{ site.favicon_img_path }}" />
-        {% endif %}
-        <link rel="stylesheet" href="{{ "css/front.css" | prepend: site.baseurl }}">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin' rel='stylesheet' type='text/css'>
-        <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/v4-shims.css">
+{% include head.html %}
     </head>
     <body>
         <div class="content">
@@ -33,16 +20,22 @@ permalink: /
             <h3>{{ site.description }}</h3>
 
                 <ul>
+                    {% if site.about_url %}
+                    <li><a class="fa fa-2x fa-info-circle" href="{{ site.baseurl }}{{ site.about_url }}"><span class="description">About us</span></a></li>
+                    {% endif %}
+
                     {% if site.meetup_page %}
                     <li><a class="fa fa-2x fa-meetup" href="https://www.meetup.com/{{ site.meetup_page }}"><span class="description">Meetup</span></a></li>
                     {% endif %}
 
+                    {% if site.sessionize_page %}
+                    <li><a class="fa fa-2x fa-microphone" href="https://sessionize.com/{{ site.sessionize_page }}"><span class="description">Sessionize</span></a></li>
+                    {% endif %}
+                </ul>
+
+                <ul>
                     {% if site.telegram_username %}
                     <li><a class="fa fa-2x fa-telegram" href="https://t.me/{{ site.telegram_username }}"><span class="description">Telegram</span></a></li>
-                    {% endif %}
-
-                    {% if site.sessionize_page %}
-                    <li><a class="fa fa-2x fa-volume-up" href="https://sessionize.com/{{ site.sessionize_page }}"><span class="description">Sessionize</span></a></li>
                     {% endif %}
 
                     {% if site.github_username %}
