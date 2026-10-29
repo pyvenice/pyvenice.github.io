@@ -86,6 +86,9 @@ a {
     border: none;
     width: auto;
 }
+.content a.home {
+    text-align: center;
+}
 .page-content {
     max-width: 700px;
     margin: 0 auto;
